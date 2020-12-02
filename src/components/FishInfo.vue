@@ -16,17 +16,16 @@
 
 <script>
 
-// import the filter(s) needed from their file 
-import { uppercase } from '@/utilities/filters.js'
+// no { } in this import
+import TextFilterMixin from '@/mixins/TextFilterMixin.js'
 
 export default {
   name: 'FishInfo',
   props: {
     name: String
   },
+  mixins: [ TextFilterMixin ],   // an array - can have many mixins
   filters: { 
-    // list the names of imported filters here
-    uppercase,
     // if this component has a specific filter, define as usual 
     // I couldn't think of anything useful :)
     fishify(data) {

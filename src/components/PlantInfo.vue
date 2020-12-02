@@ -18,22 +18,20 @@
 
 <script>
 
-import { uppercase, truncate } from '@/utilities/filters.js'
+import TextFilterMixin from '@/mixins/TextFilterMixin.js'
 
 export default {
   name: 'PlantInfo',
+  mixins: [ TextFilterMixin ],   // mixins registered as an array
   props: {
     instruction: String,
     details: String
   },
-  filters: {
-    uppercase,
-    truncate
-  },
   methods: {
     seeMessage() {
-      // use the filter, from the utilities.js file, in code
-      let message = truncate(this.details, 60)
+      // use the filter, from the mixin file, in code
+      // note filters from the mixin are directly accessible in the template
+      let message = this.$options.filters.truncate(this.details, 60)
       alert(message)
     }
   }
