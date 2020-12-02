@@ -38,11 +38,11 @@ export default {
   },
   mounted() {
     
-    // calling general utility functions from vue component
+    // example of calling general utility functions from vue component
     let twoTimesFour = double(4)
-    alert(`Two times four is ${twoTimesFour}`)
+    //alert(`Two times four is ${twoTimesFour}`)
 
-    alert(tripleArrayValues([1, 3, 4]))
+    //alert(tripleArrayValues([1, 3, 4]))
   }
 }
 </script>
